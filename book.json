@@ -1,0 +1,16 @@
+{
+    "plugins": ["youtube", "accordion", "-highlight", "sunlight-highlighter", "image-captions", "styled-blockquotes", "localized-footer"],
+    "pluginsConfig": {
+        "sunlight-highlighter": {
+            "theme": "dark",
+            "lineNumbers": true
+        },
+        "image-captions": {
+            "caption": "Imagen - _CAPTION_"
+        },
+        "localized-footer": {
+            "hline": true,
+            "filename": "./FOOTER.md"
+        }
+    }
+}

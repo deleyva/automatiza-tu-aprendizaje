@@ -1,8 +1,11 @@
 # Summary
 
+### Arrancando motores
 * [Introduction](README.md)
-* [Funciones](chapter1.md)
+* [Funciones](funciones.md)
 * [Iteraciones](iteraciones.md)
+
+### Segundo día
 * [Strings](strings.md)
 * [Archivos](archivos.md)
 * [Asociaciones inverosímiles](asociaciones-inverosimiles.md)
