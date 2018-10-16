@@ -6,10 +6,12 @@
 * [Iteraciones](iteraciones.md)
 
 ### Segundo día
+* [Añadiendo tarjetas a Anki](anadiendo-tarjetas-a-anki.md)
 * [Strings](strings.md)
 * [Archivos](archivos.md)
 * [Asociaciones inverosímiles](asociaciones-inverosimiles.md)
 * [Método del viaje](metodo-del-viaje.md)
 * [Memorizamos números](memorizamos-numeros.md)
-* [Añadiendo tarjetas a Anki](anadiendo-tarjetas-a-anki.md)
 
+### Tercer día
+* 
