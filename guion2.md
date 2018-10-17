@@ -39,3 +39,7 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 >>>
 ```
+
+```python
+x = 2
+```
