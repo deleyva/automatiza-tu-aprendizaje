@@ -14,7 +14,7 @@
 * [Memorizamos números](memorizamos-numeros.md)
 
 ### Tercer día
-* [Importando tarjetas desde csv](añadiendo-tarjetas-desde csv.md)
+* [Importando tarjetas desde csv](añadiendo-tarjetas-desde-csv.md)
 * [Listas](listas.md)
 * [Diccionarios](diccionarios.md)
 * [La lista corporal](lista-corporal.md)
