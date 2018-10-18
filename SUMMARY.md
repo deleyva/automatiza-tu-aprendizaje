@@ -20,7 +20,10 @@
 * [La lista corporal](lista-corporal.md)
 
 ### Cuarto día
+* [Debugger](debugger.md)
 * [Memoricemos fechas](fechas.md)
 * [Tuples](tupples.md)
 * [Regex](regex.md)
-* [Manejo de Diigo][diigo.md]
+* [Scrapying the web](web-scraping.md)
+* [Manejo de Diigo](diigo.md)
+  

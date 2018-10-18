@@ -1,3 +1,11 @@
+## Regex
+
+[Chuleta o 'cheatsheet'](https://www.dataquest.io/blog/large_files/python-regular-expressions-cheat-sheet.pdf)
+
+
+{% youtube %}https://www.youtube.com/watch?v=m4cOCrageIU{% endyoutube %}
+
+<!--
 utilizando métodos de cadena como `split` y` find` y utilizando listas y corte de cadena para extraer partes de las líneas.
 
 
@@ -169,3 +177,4 @@ import re
 x = 'We just received $10.00 for cookies.'
 y = re.findall('\$[0-9.]+',x)
 ```
+-->
