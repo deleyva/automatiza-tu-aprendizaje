@@ -72,21 +72,21 @@ El operador 'in' usa diferentes algoritmos para listas y diccionarios. Para list
 
 
 
-Ejercicio 1: [lista de palabras2]
+Ejercicio 1: lista de palabras2
 
 
 
 Escriba un programa que lea las palabras en `words.txt` y las almacene como claves en un diccionario. No importa cuáles sean los valores. Luego, puede usar el operador `in` como una forma rápida de verificar si una cadena está en el diccionario.
 
-## [Diccionario como conjunto de contadores] (# dictionary-as-a-set-set-of-counters)
+## Diccionario como conjunto de contadores
 
 
 
 Supongamos que se le asigna una cadena y desea contar cuántas veces aparece cada letra. Hay varias formas de hacerlo:
 
 1. Podrías crear 26 variables, una para cada letra del alfabeto. Luego, puede atravesar la cadena y, para cada carácter, incrementar el contador correspondiente, probablemente utilizando un condicional encadenado.
-1. Podrías crear una lista con 26 elementos. Luego, puede convertir cada carácter en un número (utilizando la función incorporada `ord`), usar el número como un índice en la lista e incrementar el contador apropiado.
-1. Podrías crear un diccionario con caracteres como teclas y contadores como los valores correspondientes. La primera vez que vea un carácter, agregará un elemento al diccionario. Después de eso, incrementaría el valor de un elemento existente.
+2. Podrías crear una lista con 26 elementos. Luego, puede convertir cada carácter en un número (utilizando la función incorporada `ord`), usar el número como un índice en la lista e incrementar el contador apropiado.
+3. Podrías crear un diccionario con caracteres como teclas y contadores como los valores correspondientes. La primera vez que vea un carácter, agregará un elemento al diccionario. Después de eso, incrementaría el valor de un elemento existente.
 
 Cada una de estas opciones realiza el mismo cálculo, pero cada una de ellas implementa ese cálculo de una manera diferente.
 
@@ -95,6 +95,22 @@ Cada una de estas opciones realiza el mismo cálculo, pero cada una de ellas imp
 Una ** implementación ** es una forma de realizar un cálculo; Algunas implementaciones son mejores que otras. Por ejemplo, una ventaja de la implementación del diccionario es que no tenemos que saber con anticipación qué letras aparecen en la cadena y solo tenemos que dejar espacio para las letras que aparecen.
 
 Aquí es cómo se vería el código:
+
+```python
+>>> word = 'brontosaurus'
+>>> d = dict()
+>>> for c in word: 
+...     if c not in d: 
+...         d[c] = 1 
+...     else: 
+...         d[c] = d[c] + 1 
+... print(d)
+  File "<stdin>", line 6
+    print(d)
+        ^
+SyntaxError: invalid syntax
+>>> 
+```
 
 Estamos efectivamente calculando un ** histograma **, que es un término estadístico para un conjunto de contadores (o frecuencias).
 
@@ -118,13 +134,17 @@ Los diccionarios tienen un método llamado `get` que toma una clave y un valor p
 Podemos usar `get` para escribir nuestro bucle de histograma de forma más concisa. Debido a que el método `get` maneja automáticamente el caso donde una clave no está en un diccionario, podemos reducir cuatro líneas a una y eliminar la instrucción` if`.
 
 ```python
-word = 'brontosaurus'd = dict()for c in word:    d[c] = d.get(c,0) + 1print(d)```
+word = 'brontosaurus'
+d = dict()
+for c in word:    
+	d[c] = d.get(c,0) + 1
+	print(d)```
 
 El uso del método `get` para simplificar este bucle de conteo termina siendo un" lenguaje "muy usado en Python y lo usaremos muchas veces en el resto del libro. Así que debes tomarte un momento y comparar el bucle usando la instrucción `if` y el operador` in` con el bucle usando el método `get`. Hacen exactamente lo mismo, pero uno es más sucinto.
 
 
 
-## [Diccionarios y archivos] (# diccionarios-y-archivos)
+## Diccionarios y archivos
 
 Uno de los usos comunes de un diccionario es contar la aparición de palabras en un archivo con algún texto escrito. Comencemos con un archivo muy simple de palabras tomadas del texto de ** Romeo y Julieta **.
 
@@ -152,19 +172,23 @@ python count1.pyEnter the file name: romeo.txt{'and': 3, 'envious': 1, 'already'
 
 Es un poco incómodo mirar en el diccionario para encontrar las palabras más comunes y sus conteos, por lo que necesitamos agregar un poco más de código de Python para obtener el resultado que será más útil.
 
-## [Bucles y diccionarios] (# bucles y diccionarios)
+## Bucles y diccionarios
 
 
 
 Si usa un diccionario como la secuencia en una declaración `for`, atraviesa las claves del diccionario. Este bucle imprime cada clave y el valor correspondiente:
 
 ```python
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}for key in counts:    print(key, counts[key])```
+counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+for key in counts:
+	print(key, counts[key])```
 
 Así es como se ve la salida:
 
 ```python
-jan 100chuck 1annie 42```
+jan 100
+chuck 1
+annie 42```
 
 Una vez más, las teclas no están en ningún orden en particular.
 
@@ -173,12 +197,16 @@ Una vez más, las teclas no están en ningún orden en particular.
 Podemos usar este patrón para implementar los diversos modismos de bucle que hemos descrito anteriormente. Por ejemplo, si quisiéramos encontrar todas las entradas en un diccionario con un valor superior a diez, podríamos escribir el siguiente código:
 
 ```python
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}for key in counts:    if counts[key] &gt; 10 :        print(key, counts[key])```
+counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+for key in counts:
+    if counts[key] > 10 :
+		    print(key, counts[key])```
 
 El bucle `for` recorre las ** teclas ** del diccionario, por lo que debemos usar el operador de índice para recuperar el valor ** correspondiente para cada tecla. Así es como se ve la salida:
 
 ```python
-jan 100annie 42```
+jan 100
+annie 42```
 
 Solo vemos las entradas con un valor superior a 10.
 
@@ -187,23 +215,34 @@ Solo vemos las entradas con un valor superior a 10.
 Si desea imprimir las claves en orden alfabético, primero haga una lista de las claves en el diccionario usando el método `keys` disponible en los objetos del diccionario, y luego ordene esa lista y recorra la lista ordenada, mirando cada tecla y imprimiendo pares clave-valor ordenados de la siguiente manera:
 
 ```python
-counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}lst = list(counts.keys())print(lst)lst.sort()for key in lst:    print(key, counts[key])```
+counts = { 'chuck' : 1 , 'annie' : 42, 'jan': 100}
+lst = list(counts.keys())
+print(lst)
+lst.sort()
+for key in lst:
+    print(key, counts[key])```
 
 Así es como se ve la salida:
 
 ```python
-['jan', 'chuck', 'annie']annie 42chuck 1jan 100```
+['jan', 'chuck', 'annie']
+annie 42
+chuck 1
+jan 100```
 
 Primero ve la lista de claves en orden no clasificado que obtenemos del método `keys`. Luego vemos los pares clave-valor en orden desde el bucle `for`.
 
-## [Análisis de texto avanzado] (# análisis de texto avanzado)
+## Análisis de texto avanzado
 
 
 
 En el ejemplo anterior utilizando el archivo `romeo.txt`, hicimos el archivo lo más simple posible eliminando toda puntuación a mano. El texto real tiene mucha puntuación, como se muestra a continuación.
 
 ```python
-But, soft! what light through yonder window breaks?It is the east, and Juliet is the sun.Arise, fair sun, and kill the envious moon,Who is already sick and pale with grief,```
+But, soft! what light through yonder window breaks?
+It is the east, and Juliet is the sun.
+Arise, fair sun, and kill the envious moon,
+Who is already sick and pale with grief,```
 
 Dado que la función `split` de Python busca espacios y trata las palabras como símbolos separados por espacios, deberíamos tratar las palabras" suave ". y "suave" como ** diferentes ** palabras y cree una entrada de diccionario separada para cada palabra.
 
@@ -219,32 +258,22 @@ No especificaremos la "tabla", pero usaremos el parámetro `deletechars` para el
 
 ```python
 >>> import string
->>> string.punctuation'!"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~'```
+>>> string.punctuation
+'!"#$%&amp;\'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~'```
 
 Los parámetros utilizados por `translate` eran diferentes en Python 2.0.
 
 Realizamos las siguientes modificaciones a nuestro programa:
 
-Parte de aprender el "Arte de Python" o "Pensar de manera pitónica" es darse cuenta de que Python a menudo tiene capacidades integradas para muchos problemas comunes de análisis de datos. Con el tiempo, verá suficiente código de ejemplo y leerá suficiente documentación para saber dónde buscar para ver si alguien ya ha escrito algo que facilite mucho su trabajo.
+<iframe src="https://trinket.io/embed/python3/0e46e80305" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+
+Parte de aprender el "Arte de Python" o "Pensar de manera pytónica" es darse cuenta de que Python a menudo tiene capacidades integradas para muchos problemas comunes de análisis de datos. Con el tiempo, verá suficiente código de ejemplo y leerá suficiente documentación para saber dónde buscar para ver si alguien ya ha escrito algo que facilite mucho su trabajo.
 
 La siguiente es una versión abreviada de la salida:
 
 ```python
-Enter the file name: romeo-full.txt{'swearst': 1, 'all': 6, 'afeard': 1, 'leave': 2, 'these': 2,'kinsmen': 2, 'what': 11, 'thinkst': 1, 'love': 24, 'cloak': 1,a': 24, 'orchard': 2, 'light': 5, 'lovers': 2, 'romeo': 40,'maiden': 1, 'whiteupturned': 1, 'juliet': 32, 'gentleman': 1,'it': 22, 'leans': 1, 'canst': 1, 'having': 1, ...}```
+Enter the file name: romeo-full.txt
+{'swearst': 1, 'all': 6, 'afeard': 1, 'leave': 2, 'these': 2,'kinsmen': 2, 'what': 11, 'thinkst': 1, 'love': 24, 'cloak': 1,a': 24, 'orchard': 2, 'light': 5, 'lovers': 2, 'romeo': 40,'maiden': 1, 'whiteupturned': 1, 'juliet': 32, 'gentleman': 1,'it': 22, 'leans': 1, 'canst': 1, 'having': 1, ...}```
 
 Mirar a través de esta salida aún es difícil de manejar y podemos usar Python para darnos exactamente lo que estamos buscando, pero para hacerlo, necesitamos aprender sobre las tuplas de Python ** **. Retomaremos este ejemplo una vez que aprendamos sobre las tuplas.
-
-## [depuración] (# depuración)
-
-
-
-A medida que trabaja con conjuntos de datos más grandes, se puede volver difícil de depurar imprimiendo y verificando los datos a mano. Aquí hay algunas sugerencias para depurar grandes conjuntos de datos:
-
-Si es posible, reduzca el tamaño del conjunto de datos. Por ejemplo, si el programa lee un archivo de texto, comience solo con las primeras 10 líneas, o con el ejemplo más pequeño que pueda encontrar. Puede editar los archivos por sí mismos, o (mejor) modificar el programa para que solo lea las primeras líneas `n`.
-
-Si hay un error, puede reducir `n` al valor más pequeño que manifiesta el error, y luego aumentarlo gradualmente a medida que encuentre y corrija los errores.
-
-En lugar de imprimir y verificar todo el conjunto de datos, considere imprimir resúmenes de los datos: por ejemplo, la cantidad de elementos en un diccionario o el total de una lista de números.
-
-Una causa común de errores de tiempo de ejecución es un valor que no es el tipo correcto. Para depurar este tipo de error, a menudo es suficiente imprimir el tipo de un valor.
 

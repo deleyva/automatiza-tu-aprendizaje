@@ -19,3 +19,8 @@
 * [Diccionarios](diccionarios.md)
 * [La lista corporal](lista-corporal.md)
 
+### Cuarto día
+* [Memoricemos fechas](fechas.md)
+* [Tuples](tupples.md)
+* [Regex](regex.md)
+* [Manejo de Diigo][diigo.md]

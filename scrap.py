@@ -4,7 +4,7 @@ from py_translator import Translator
 import tomd
 import time
 
-r = requests.get('https://books.trinket.io/pfe/09-dictionaries.html')
+r = requests.get('https://books.trinket.io/pfe/10-tuples.html')
 soup = BeautifulSoup(r.text, 'html.parser')
 
 texto_markdown = tomd.convert(str(soup.body))
@@ -12,8 +12,8 @@ lista = texto_markdown.splitlines()
 
 flag_entre_comillas = False
 
-with open('diccionarios.md', 'w') as file:
-	for item in lista[60:]:
+with open('tupples1.md', 'a') as file:
+	for item in lista[230:]:
 		translator = Translator()
 		if '```' in item:
 			file.writelines('```')
