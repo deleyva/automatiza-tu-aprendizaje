@@ -203,8 +203,135 @@ Las expresiones de python son greedy por defecto
 >
 >El símbolo '?' tiene dos usos en las expresiones regulares: declarar nongreedy matchings (patrones no codiciosos) o marcar un grupo opcional.
 
+___
 
+#### Utilizando atajos de caracter
 
+```python
+>>> xmasRegex = re.compile(r'\d+\s\w+')
+>>> xmasRegex.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7
+swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
+['12 drummers', '11 pipers', '10 lords', '9 ladies', '8 maids', '7 swans', '6
+geese', '5 rings', '4 birds', '3 hens', '2 doves', '1 partridge']
+```
+
+#### Compila tus propias clases de caracteres
+
+```python
+>>> vowelRegex = re.compile(r'[aeiouAEIOU]')
+>>> vowelRegex.findall('Robocop eats baby food. BABY FOOD.')
+['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
+```
+
+#### Inicio y final de cadena
+
+```python
+>>> beginsWithHello = re.compile(r'^Hello')
+>>> beginsWithHello.search('Hello world!')
+<_sre.SRE_Match object; span=(0, 5), match='Hello'>
+>>> beginsWithHello.search('He said hello.') == None
+True
+```
+
+```python
+>>> endsWithNumber = re.compile(r'\d$')
+>>> endsWithNumber.search('Your number is 42')
+<_sre.SRE_Match object; span=(16, 17), match='2'>
+>>> endsWithNumber.search('Your number is forty two.') == None
+True
+```
+
+```python
+>>> wholeStringIsNum = re.compile(r'^\d+$')
+>>> wholeStringIsNum.search('1234567890')
+<_sre.SRE_Match object; span=(0, 10), match='1234567890'>
+>>> wholeStringIsNum.search('12345xyz67890') == None
+True
+>>> wholeStringIsNum.search('12 34567890') == None
+True
+```
+
+#### The Wildcard Character
+
+```python
+>>> atRegex = re.compile(r'.at')
+>>> atRegex.findall('The cat in the hat sat on the flat mat.')
+['cat', 'hat', 'sat', 'lat', 'mat']
+```
+
+#### Encontrando todo con el punto '.'
+
+```python
+>>> nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)')
+>>> mo = nameRegex.search('First Name: Al Last Name: Sweigart')
+>>> mo.group(1)
+'Al'
+>>> mo.group(2)
+'Sweigart'
+```
+
+#### Encontrando nuevas líneas con el '.'
+
+```python
+>>> noNewlineRegex = re.compile('.*')
+>>> noNewlineRegex.search('Serve the public trust.\nProtect the innocent.
+\nUphold the law.').group()
+'Serve the public trust.'
+
+>>> newlineRegex = re.compile('.*', re.DOTALL)
+>>> newlineRegex.search('Serve the public trust.\nProtect the innocent.
+\nUphold the law.').group()
+'Serve the public trust.\nProtect the innocent.\nUphold the law.'
+
+```
+
+### Hacerlas insensibles a mayúsculas y minúsculas
+
+```python
+>>> robocop = re.compile(r'robocop', re.I)
+>>> robocop.search('Robocop is part man, part machine, all cop.').group()
+'Robocop'
+
+>>> robocop.search('ROBOCOP protects the innocent.').group()
+'ROBOCOP'
+
+>>> robocop.search('Al, why does your programming book talk about robocop so much?').group()
+'robocop'
+```
+
+#### Sustituir cadenas con sum()
+
+```python
+>>> namesRegex = re.compile(r'Agent \w+')
+>>> namesRegex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.')
+'CENSORED gave the secret documents to CENSORED.'
+```
+
+```python
+>>> agentNamesRegex = re.compile(r'Agent (\w)\w*')
+>>> agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent
+Eve knew Agent Bob was a double agent.')
+A**** told C**** that E**** knew B**** was a double agent.'
+```
+
+#### Manejando expresiones complejas
+
+```python
+phoneRegex = re.compile(r'''(
+    (\d{3}|\(\d{3}\))?            # area code
+    (\s|-|\.)?                    # separator
+    \d{3}                         # first 3 digits
+    (\s|-|\.)                     # separator
+    \d{4}                         # last 4 digits
+    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+    )''', re.VERBOSE)
+```
+
+#### Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
+
+```python
+>>> someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
+```
 
 >**tip**
 >

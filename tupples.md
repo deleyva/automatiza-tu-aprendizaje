@@ -1,10 +1,7 @@
 ## Los tuples son inmutables
 
 
-Tutorial [aquí](https://librosweb.es/libro/algoritmos_python/capitulo_7/tuplas.html)
-
-
-### Siguiente texto en construcción
+Tutorial en español [aquí](https://librosweb.es/libro/algoritmos_python/capitulo_7/tuplas.html)
 
 Un tuple es una secuencia de valores muy parecida a una lista. Los valores almacenados en una tupla pueden ser de cualquier tipo, y están indexados por enteros. La diferencia importante es que los tuples son ** inmutables **. Los tuples también son ** comparables ** y ** hashable **, por lo que podemos clasificar las listas y usar tuplas como valores clave en los diccionarios de Python.
 
@@ -36,7 +33,7 @@ Sin la coma, Python trata `('a')` como una expresión con una cadena entre paré
 <type 'str'>
 ```
 
-Otra forma de construir una tupla es la función incorporada `tupla`. Sin argumento, crea una tupla vacía:
+Otra forma de construir una tupla es la función incorporada `tuple()`. Sin argumento, crea una tupla vacía:
 
 >>> t = tuple()
 >>> print(t)
@@ -81,11 +78,9 @@ Pero si intentas modificar uno de los elementos de el tuple, obtendrás un error
 TypeError: el objeto no admite la asignación de elementos
 ```
 
-No puede modificar los elementos de un tuple, pero puede reemplazar un tuple con otra:
+No puede modificar los elementos de un tuple, pero puede reemplazar un tuple con otra.
 
 ## Comparando tuples
-
-
 
 Los operadores de comparación trabajan con tuplas y otras secuencias. Python comienza comparando el primer elemento de cada secuencia. Si son iguales, pasa al siguiente elemento, y así sucesivamente, hasta que encuentra elementos que difieren. Los elementos subsiguientes no se consideran (incluso si son realmente grandes).
 
@@ -99,25 +94,17 @@ True
 
 La función `sort` funciona de la misma manera. Se ordena principalmente por el primer elemento, pero en el caso de un empate, se ordena por el segundo elemento, y así sucesivamente.
 
-Esta característica se presta a un patrón llamado ** DSU ** para
-
-una secuencia mediante la creación de una lista de tuplas con una o más claves de clasificación que preceden a los elementos de la secuencia,
-
-la lista de tuplas usando el `sort` incorporado de Python, y
-
-Extrayendo los elementos ordenados de la secuencia.
+Esta característica se presta a un patrón llamado **DSU ** para una secuencia mediante la creación de una lista de tuplas con una o más claves de clasificación que preceden a los elementos de la secuencia, la lista de tuplas usando el `sort` incorporado de Python, y extrayendo los elementos ordenados de la secuencia.
 
 [DSU]
 
 Por ejemplo, suponga que tiene una lista de palabras y desea clasificarlas de la más larga a la más corta:
 
-
+<iframe src="https://trinket.io/embed/python3/a9108b396f" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 El primer bucle crea una lista de tuplas, donde cada tupla es una palabra precedida por su longitud.
 
 `sort` compara el primer elemento, la longitud, el primero y solo considera el segundo elemento para romper lazos. El argumento de la palabra clave `reverse = True` le dice a` sort` que vaya en orden decreciente.
-
-<iframe src="https://trinket.io/embed/python3/fb2b05917a" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 El segundo bucle atraviesa la lista de tuplas y crea una lista de palabras en orden descendente de longitud. Las palabras de cuatro caracteres están ordenadas en orden ** alfabético inverso **, por lo que "qué" aparece antes de "suave" en la siguiente lista.
 
@@ -187,7 +174,7 @@ El número de variables a la izquierda y el número de valores a la derecha debe
 
 ```python
 >>>a, b = 1, 2, 3
-ValueError: demasiados valores para descomprimir
+ValueError: too many values to unpack
 ```
 
 Más generalmente, el lado derecho puede ser cualquier tipo de secuencia (cadena, lista o tupla). Por ejemplo, para dividir una dirección de correo electrónico en un nombre de usuario y un dominio, podría escribir:
@@ -208,6 +195,7 @@ Más generalmente, el lado derecho puede ser cualquier tipo de secuencia (cadena
 >>> 
 Connection to server timed out. Run trinket again to reconnect.
 ```
+### Diccionarios y tuples
 
 Los diccionarios no se ordenan, los tuples sí:
 
@@ -224,17 +212,24 @@ Los diccionarios no se ordenan, los tuples sí:
 ## Asignación múltiple con diccionarios
 
 
-
 Combinando `items`, tupla asignación y` for`, puedes ver un bonito patrón de código para recorrer las claves y los valores de un diccionario en un solo bucle:
 
-```for key, val in list(d.items()):    print(val, key)```
+```python
+for key, val in list(d.items()):
+    print(val, key)
+```
+
 Este bucle tiene dos ** variables de iteración ** porque `items` devuelve una lista de tuplas y` key, val` es una asignación de tuplas que se repite sucesivamente a través de cada uno de los pares clave-valor en el diccionario.
 
 Para cada iteración a través del bucle, tanto `clave` como` valor` avanzan al siguiente par clave-valor en el diccionario (aún en orden hash).
 
 La salida de este bucle es:
 
-```10 a22 c1 b```
+```
+10 a
+22 c
+1 b
+```
 
 Nuevamente, está en orden de clave hash (es decir, no hay un orden particular).
 
@@ -248,15 +243,16 @@ Para hacer esto, primero hacemos una lista de tuplas donde cada tupla es `(valor
 >>> l[(10, 'a'), (22, 'c'), (1, 'b')]
 >>> l.sort(reverse=True)
 >>> l[(22, 'c'), (10, 'a'), (1, 'b')]
->>>```
+>>>
+```
 
 Al construir cuidadosamente la lista de tuplas para que tenga el valor como primer elemento de cada tupla, podemos ordenar la lista de tuplas y obtener el contenido de nuestro diccionario ordenado por valor.
 
-## Las palabras más comunes
-
-
+### Las palabras más comunes
 
 Volviendo a nuestro ejemplo de ejecución del texto de ** Romeo y Julieta ** Act 2, Scene 2, podemos aumentar nuestro programa para usar esta técnica para imprimir las diez palabras más comunes en el texto de la siguiente manera:
+
+<iframe src="https://trinket.io/embed/python3/02d5959f40" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 
 La primera parte del programa que lee el archivo y calcula el diccionario que asigna cada palabra al conteo de palabras en el documento no se modifica. Pero en lugar de simplemente imprimir `count` y finalizar el programa, construimos una lista de` (val, key) `tuplas y luego ordenamos la lista en orden inverso.
 
@@ -266,65 +262,42 @@ Al final, escribimos un bonito bucle `for` que realiza una iteración de asignac
 
 Así que ahora la salida finalmente se parece a lo que queremos para nuestro análisis de frecuencia de palabras.
 
-```61 i42 and40 romeo34 to34 the32 thou32 juliet30 that29 my24 thee```
-El hecho de que este complejo análisis y análisis de datos se puede realizar con un programa de Python de 19 líneas fácil de entender es una de las razones por las que Python es una buena opción como lenguaje para explorar información.
+```python
+61 i
+42 and
+40 romeo
+34 to
+34 the
+32 thou
+32 juliet
+30 that
+29 my
+24 thee
+```
+
+El hecho de que este complejo parseo y análisis de datos se puede realizar con un programa de Python de 19 líneas fácil de entender es una de las razones por las que Python es una buena opción como lenguaje para explorar información.
 
 ## Uso de tuplas como claves en los diccionarios
 
-Debido a que las tuplas son ** hashable ** y las listas no, si queremos crear una clave ** compuesta ** para usar en un diccionario, debemos usar una tupla como clave.
+Debido a que las tuplas son **hashable** y las listas no, si queremos crear una clave **compuesta** para usar en un diccionario, debemos usar una tupla como clave.
 
 Nos gustaría encontrar una clave compuesta si quisiéramos crear un directorio telefónico que se asigne desde los apellidos, los pares de primer nombre a los números de teléfono. Asumiendo que hemos definido las variables `last`,` first` y `number`, podríamos escribir una declaración de asignación de diccionario de la siguiente manera:
 
-```directory[last,first] = number```
+```python
+directory[last,first] = number
+```
+
 La expresión entre paréntesis es una tupla. Podríamos usar la asignación de tuplas en un bucle `for` para atravesar este diccionario.
 
+```python
+for last, first in directory:
+    print(first, last, directory[last,first])
+```
 
-
-```for last, first in directory:    print(first, last, directory[last,first])```
 Este bucle atraviesa las claves en `directorio`, que son tuplas. Asigna los elementos de cada tupla a `last` y` first`, luego imprime el nombre y el número de teléfono correspondiente.
 
-## [Secuencias: cadenas, listas y tuplas - ¡Oh My!] (# Secuencias-listas-y-tuplas --- oh-my)
-
-
-
-Me he centrado en las listas de tuplas, pero casi todos los ejemplos de este capítulo también funcionan con listas de listas, tuplas de tuplas y tuplas de listas. Para evitar enumerar las posibles combinaciones, a veces es más fácil hablar de secuencias de secuencias.
-
-En muchos contextos, los diferentes tipos de secuencias (cadenas, listas y tuplas) se pueden usar indistintamente. Entonces, ¿cómo y por qué eliges uno sobre los otros?
-
-
-
-Para comenzar con lo obvio, las cadenas son más limitadas que otras secuencias porque los elementos tienen que ser caracteres. También son inmutables. Si necesita la capacidad de cambiar los caracteres en una cadena (en lugar de crear una nueva cadena), es posible que desee utilizar una lista de caracteres en su lugar.
-
-Las listas son más comunes que las tuplas, principalmente porque son mutables. Pero hay algunos casos en los que podrías preferir las tuplas:
-
-1. En algunos contextos, como una declaración `return ', es sintácticamente más simple crear una tupla que una lista. En otros contextos, es posible que prefiera una lista.
-2. Si desea usar una secuencia como clave de diccionario, debe usar un tipo inmutable como una tupla o cadena.
-3. Si está pasando una secuencia como un argumento a una función, el uso de tuplas reduce el potencial de comportamiento inesperado debido al aliasing.
-
-Debido a que las tuplas son inmutables, no proporcionan métodos como `sort` y` reverse`, que modifican las listas existentes. Sin embargo, Python proporciona las funciones integradas `sorted` y` reverseed`, que toman cualquier secuencia como parámetro y devuelven una nueva secuencia con los mismos elementos en un orden diferente.
-
-
-
-## [depuración] (# depuración)
-
-
-
-Las listas, los diccionarios y las tuplas se conocen genéricamente como ** estructuras de datos **; en este capítulo estamos empezando a ver estructuras de datos compuestas, como listas de tuplas y diccionarios que contienen tuplas como claves y listas como valores. Las estructuras de datos compuestos son útiles, pero son propensas a lo que yo llamo ** errores de forma **; es decir, los errores causados ​​cuando una estructura de datos tiene el tipo, tamaño o composición incorrectos, o tal vez usted escribe un código y olvida la forma de sus datos e introduce un error.
-
-Por ejemplo, si está esperando una lista con un entero y le doy un entero antiguo (no en una lista), no funcionará.
-
-Cuando está depurando un programa, y ​​especialmente si está trabajando en un error, hay cuatro cosas que puede intentar:
-
-Examine su código, léalo nuevamente y verifique que diga lo que quería decir.
-
-Experimente haciendo cambios y ejecutando diferentes versiones. A menudo, si muestra lo correcto en el lugar correcto en el programa, el problema se vuelve obvio, pero a veces debe dedicar algo de tiempo a construir andamios.
-
-¡Tómate un tiempo para pensar! ¿Qué tipo de error es: sintaxis, tiempo de ejecución, semántico? ¿Qué información puede obtener de los mensajes de error o de la salida del programa? ¿Qué tipo de error podría causar el problema que estás viendo? ¿Qué fue lo último que cambió, antes de que apareciera el problema?
-
-En algún momento, lo mejor que puede hacer es retirarse, deshacer los cambios recientes, hasta que vuelva a un programa que funcione y que comprenda. Entonces puedes empezar a reconstruir.
-
-Los programadores principiantes a veces se atascan en una de estas actividades y se olvidan de las demás. Cada actividad viene con su propio modo de falla.
-
-Por ejemplo, leer su código puede ayudar si el problema es un error tipográfico, pero no si el problema es un malentendido conceptual. Si no entiende lo que hace su programa, puede leerlo 100 veces y nunca ver el error, porque el error está en su cabeza.
-
-
+>**tip**
+>
+>### Ahora en vídeo (activa los subtítulos)
+>
+>{% youtube %}https://www.youtube.com/watch?v=GA8aGIgI-dc&{% endyoutube %}
