@@ -24,6 +24,9 @@
 * [Memoricemos fechas](fechas.md)
 * [Tuples](tupples.md)
 * [Regex](regex.md)
-* [Scrapying the web](web-scraping.md)
 * [Manejo de Diigo](diigo.md)
-  
+
+### Quinto día
+
+* [Instalando librerías en python](instalando-librerias.md)
+* [Web Scrapying](web-scraping.md)
