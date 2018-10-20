@@ -272,6 +272,54 @@ True
 {'id': 'author'}
 ```
 
+### Programa de ejemplo
+
+¿Qué hace el siguiente programa?
+
+```python
+#! python3
+# downloadXkcd.py - Downloads every single XKCD comic.
+
+import requests, os, bs4
+
+url = 'http://xkcd.com'              # starting url
+os.makedirs('xkcd', exist_ok=True)   # store comics in ./xkcd
+while not url.endswith('#'):
+    # Download the page.
+    print('Downloading page %s...' % url)
+    res = requests.get(url)
+    res.raise_for_status()
+
+    soup = bs4.BeautifulSoup(res.text)
+    comicElem = soup.select('#comic img')
+    if comicElem == []:
+         print('Could not find comic image.')
+    else:
+         try:
+             comicUrl = 'http:' + comicElem[0].get('src')
+             # Download the image.
+             print('Downloading image %s...' % (comicUrl))
+             res = requests.get(comicUrl)
+             res.raise_for_status()
+         except requests.exceptions.MissingSchema:
+             # skip this comic
+             prevLink = soup.select('a[rel="prev"]')[0]
+             url = 'http://xkcd.com' + prevLink.get('href')
+             continue
+
+        # Save the image to ./xkcd.
+        imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
+        for chunk in res.iter_content(100000):
+            imageFile.write(chunk)
+        imageFile.close()
+
+    # Get the Prev button's url.
+    prevLink = soup.select('a[rel="prev"]')[0]
+    url = 'http://xkcd.com' + prevLink.get('href')
+
+print('done')
+```
+
 ## Controlando el navegador con Selenium
 
 Para estos ejemplos, necesitarás el navegador web Firefox. Este será el navegador que controlas. Si aún no tiene Firefox, puede descargarlo gratuitamente desde http://getfirefox.com/. 
@@ -467,3 +515,129 @@ try:
 except:
     print('Was not able to find an element with that name.')
 ```
+
+### Clicando en la página
+
+```python
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser = webdriver.Firefox()
+linkElem = browser.find_element_by_link_text('YouTube')
+type(linkElem)
+<class 'selenium.webdriver.remote.webelement.WebElement'>
+linkElem.click() # follows the "Read It Online" link
+```
+
+### Rellenando y enviando formularios
+
+```python
+from selenium import webdriver
+import time
+browser = webdriver.Firefox()
+browser.get('https://mail.yahoo.com')
+emailElem = browser.find_element_by_id('login-username')
+emailElem.send_keys('not_my_real_email')
+linkElem = browser.find_element_by_id('login-signin')
+linkElem.click()
+time.sleep(5)
+passwordElem = browser.find_element_by_id('login-passwd')
+passwordElem.send_keys('12345')
+linkElem = browser.find_element_by_id('login-signin')
+linkElem.click()
+```
+
+### Enviando claves especiales
+
+Selenium tiene un módulo para las teclas del teclado que es imposible escribir en un valor de cadena, que funciona de manera muy similar a los caracteres de escape. Estos valores se almacenan en atributos en el módulo selenium.webdriver.common.keys. Dado que es un nombre de módulo tan largo, es mucho más fácil ejecutarlo desde selenium.webdriver.common.keys import Keys en la parte superior de su programa; si lo hace, simplemente puede escribir claves en cualquier lugar donde normalmente tendría que escribir selenium.webdriver.common.keys. La siguiente tabla enumera las variables de claves comúnmente utilizadas.
+
+<table summary="Commonly Used Variables in the selenium.webdriver.common.keys Module" class="calibre9">
+<colgroup class="calibre10">
+<col class="calibre11">
+<col class="calibre11">
+</colgroup>
+<thead class="calibre12">
+<tr class="calibre13">
+<th valign="top" class="calibre14">
+<p class="calibre4">Attributes</p>
+</th>
+<th valign="top" class="calibre15">
+<p class="calibre4">Meanings</p>
+</th>
+</tr>
+</thead>
+<tbody class="calibre16">
+<tr class="calibre13">
+<td valign="top" class="calibre17">
+<p class="calibre4"><code class="literal2">Keys.DOWN</code>, <code class="literal2">Keys.UP</code>, <code class="literal2">Keys.LEFT</code>, <code class="literal2">Keys.RIGHT</code></p>
+</td>
+<td valign="top" class="calibre18">
+<p class="calibre4">The keyboard arrow keys</p>
+</td>
+</tr>
+<tr class="calibre19">
+<td valign="top" class="calibre17">
+<p class="calibre4"><code class="literal2">Keys.ENTER</code>, <code class="literal2">Keys.RETURN</code></p>
+</td>
+<td valign="top" class="calibre18">
+<p class="calibre4">The <span class="smaller">ENTER</span> and <span class="smaller">RETURN</span> keys</p>
+</td>
+</tr>
+<tr class="calibre13">
+<td valign="top" class="calibre17">
+<p class="calibre4"><code class="literal2">Keys.HOME</code>, <code class="literal2">Keys.END</code>, <code class="literal2">Keys.PAGE_DOWN</code>, <code class="literal2">Keys.PAGE_UP</code></p>
+</td>
+<td valign="top" class="calibre18">
+<p class="calibre4">The <code class="literal2">home</code>, <code class="literal2">end</code>, <code class="literal2">pagedown</code>, and <code class="literal2">pageup</code> keys</p>
+</td>
+</tr>
+<tr class="calibre19">
+<td valign="top" class="calibre17">
+<p class="calibre4"><code class="literal2">Keys.ESCAPE</code>, <code class="literal2">Keys.BACK_SPACE</code>, <code class="literal2">Keys.DELETE</code></p>
+</td>
+<td valign="top" class="calibre18">
+<p class="calibre4">The <span class="smaller">ESC</span>, <span class="smaller">BACKSPACE</span>, and <span class="smaller">DELETE</span> keys</p>
+</td>
+</tr>
+<tr class="calibre13">
+<td valign="top" class="calibre17">
+<p class="calibre4"><code class="literal2">Keys.F1</code>, <code class="literal2">Keys.F2</code>,..., <code class="literal2">Keys.F12</code></p>
+</td>
+<td valign="top" class="calibre18">
+<p class="calibre4">The F1 to F12 keys at the top of the keyboard</p>
+</td>
+</tr>
+<tr class="calibre19">
+<td valign="top" class="calibre20">
+<p class="calibre4"><code class="literal2">Keys.TAB</code></p>
+</td>
+<td valign="top" class="calibre21">
+<p class="calibre4">The <span class="smaller">TAB</span> key</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+```python
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+browser = webdriver.Firefox()
+browser.get('http://nostarch.com')
+time.sleep(2)
+htmlElem = browser.find_element_by_tag_name('html')
+htmlElem.send_keys(Keys.END)     # scrolls to bottom
+time.sleep(3)
+htmlElem.send_keys(Keys.HOME)    # scrolls to top
+```
+
+### Clicando las teclas del navegador
+
+* browser.back(). Clicks the Back button.
+* browser.forward(). Clicks the Forward button.
+* browser.refresh(). Clicks the Refresh/Reload button.
+* browser.quit(). Clicks the Close Window button.
+
+>**tip**
+>
+>Selenium puede hacer mucho más que las funciones descritas aquí. Puede modificar las cookies de su navegador, tomar capturas de pantalla de páginas web y ejecutar JavaScript personalizado. Para obtener más información sobre estas funciones, puede visitar la documentación de Selenium en http://selenium-python.readthedocs.org/.
+
