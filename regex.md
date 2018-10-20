@@ -1,4 +1,6 @@
-## Regex
+## Regex (regular expressions)
+
+Información extraida de [_Automate the boring stuff_](https://automatetheboringstuff.com/chapter7/) de Al Sweigart.
 
 ### Intro
 
@@ -43,18 +45,16 @@ lista = re.findall('[0-9]+', fh.read())
 
 ### Clases de caracter
 
-|
-Shorthand character class
-|
-Represents
-|
-|--- |--- |
-|\d|Any numeric digit from 0 to 9.|
-|\D|Any character that is not a numeric digit from 0 to 9.|
-|\w|Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)|
-|\W|Any character that is not a letter, numeric digit, or the underscore character.|
-|\s|Any space, tab, or newline character. (Think of this as matching “space” characters.)|
-|\S|Any character that is not a space, tab, or newline.|
+| Shorthand character class | Represents |
+|:---: |:---: |
+|\d|Cualquier dígito numérico de 0 a 9.|
+|\D|Cualquier caracter que NO sea un dígito numérico de 0 a 9.|
+|\w|Cualquier letra, dígito numérico, o el guión bajo. (Piensa en este atajo como el caracter de palabra.)|
+|\W|Cualquier caracter que NO sea una letra, dígito numérico, o el guión bajo. .|
+|\s|Cualquier espacio, tabulador, o caracter de nueva línea. (Think of this as matching “space” characters.)|
+|\S|Cualquier caracter que NO sea espacio, tabulador, o caracter de nueva línea.|
+
+
 
 
 ### Recetas
@@ -98,7 +98,7 @@ print(numero[0][1]) # Saldrá '555-4242'
 Usando re.compile y accediendo a los datos con la función group():
 
 ```python
->>> heroRegex = re.compile (r'Batman|Tina Fey')
+>>> heroRegex = re.compile (r'Batman|Tina Fey') # Crea un objeto regex
 >>> mo1 = heroRegex.search('Batman and Tina Fey.')
 >>> mo1.group()
 'Batman'
@@ -332,6 +332,25 @@ phoneRegex = re.compile(r'''(
 ```python
 >>> someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
 ```
+
+## Repaso
+
+Este capítulo cubrió mucha notación, así que aquí hay una revisión rápida de lo que aprendiste:
+* El '?' coincide con cero o uno del grupo anterior.
+* El '*' coincide con cero o más del grupo anterior.
+* El '+' coincide con uno o más del grupo anterior.
+* La {n} coincide exactamente con n del grupo anterior.
+* La {n,} coincide con n o más del grupo anterior.
+* El {, m} coincide con 0 a m del grupo anterior.
+* La {n, m} coincide con al menos n y como máximo m del grupo anterior.
+* {n, m}? o *? o +? realiza un partido no 'codicioso' del grupo anterior (non greedy matching).
+* '^spam' significa que la cadena debe comenzar con spam.
+* 'spam$' significa que la cadena debe terminar con spam.
+* Los '.' coincide con cualquier carácter, excepto los caracteres de nueva línea.
+* \d, \w y \s coinciden con un dígito, palabra o carácter de espacio, respectivamente.
+* \D, \W y \S coinciden con cualquier cosa excepto un dígito, palabra o espacio, respectivamente. 
+* [abc] coincide con cualquier carácter entre los paréntesis (como a, b, o c).
+* [^abc] coincide con cualquier carácter que no esté entre los paréntesis.
 
 >**tip**
 >
