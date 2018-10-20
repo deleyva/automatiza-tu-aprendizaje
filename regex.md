@@ -2,6 +2,10 @@
 
 Información extraida de [_Automate the boring stuff_](https://automatetheboringstuff.com/chapter7/) de Al Sweigart.
 
+>**success**
+
+>Web importante para testear regex: [https://regex101.com/](https://regex101.com/)
+
 ### Intro
 
 Ya hemos trabajado con archivos de texto tratando de encontrar, modificar o extraer datos del mismo. Sabemos que teníamos que seguir los siguientes pasos:

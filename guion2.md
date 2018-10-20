@@ -1,4 +1,4 @@
-## Repasamos
+# Segundo día
 
 ### asignaciones, variables y función print
 ```python
@@ -43,3 +43,9 @@ ZeroDivisionError: division by zero
 ```python
 x = 2
 ```
+
+# Quinto día
+
+* Pregunto a ___ si se sabe las fechas
+* Hacemos una cuenta en Diigo
+* 

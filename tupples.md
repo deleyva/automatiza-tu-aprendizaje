@@ -1,5 +1,6 @@
 ## Los tuples son inmutables
 
+Contenido extraído de [aquí](https://books.trinket.io/pfe/10-tuples.html).
 
 Tutorial en español [aquí](https://librosweb.es/libro/algoritmos_python/capitulo_7/tuplas.html)
 
