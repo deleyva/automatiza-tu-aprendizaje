@@ -11,3 +11,5 @@ else:
     address = pyperclip.paste()
 
 webbrowser.open('https://www.google.com/maps/place/' + address)
+
+
