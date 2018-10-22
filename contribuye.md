@@ -6,8 +6,6 @@ Qué suerte tener todas estas librerías para utilizarlas y ahorrarnos trabajo. 
 
 Regístrate en [github](https://github.com/)
 
-![](img/github.png)
-
 Una vez registrado, regístrate también en la web de [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
 
 ![](img/hacktober.png)
@@ -16,7 +14,7 @@ Una vez registrado, regístrate también en la web de [Hacktoberfest](https://ha
 
 ![](img/fork.png)
 
-![](img/pullrequests.png)
+Una vez allí, puedes editar en tu repositorio el archivo que desees, y hacer un pull request.
 
 {% youtube %}https://www.youtube.com/watch?v=QntLv5BjUr0{% endyoutube %}
 
