@@ -5,7 +5,7 @@ A parte de las librerías con las que ya viene python, como 're', 'math' o 'csv'
 Sólo tendremos que correr el comando 'pip install <nombre de la lirería>' y luego importarla en nuestro script.
 
 ```bash
-pip install requests
+pip install requests, bs4
 ```
 
 Una vez hecho esto, deberemos incluirla en las primeras líneas del archivo '.py' en el que queramos utilizarla siguiendo las instrucciones de la página del proyecto.
