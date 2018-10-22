@@ -661,6 +661,11 @@ print(headers['Last-Modified'])
 import requests
 from bs4 import BeautifulSoup
 
+# Sólo para aprobar
+#url = input('Enter - ')
+#html = urllib.request.urlopen(url, context=ctx).read()
+#soup = BeautifulSoup(html, 'html.parser')
+
 req = requests.get('http://py4e-data.dr-chuck.net/known_by_Faith.html')
 
 for i in range(7):
