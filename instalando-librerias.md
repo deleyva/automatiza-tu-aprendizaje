@@ -8,7 +8,7 @@ Sólo tendremos que correr el comando 'pip install <nombre de la lirería>' y lu
 pip install requests
 ```
 
-Una vez hecho esto, deberemos incluira arriba el archivo '.py' en el que queramos utilizarla.
+Una vez hecho esto, deberemos incluirla en las primeras líneas del archivo '.py' en el que queramos utilizarla siguiendo las instrucciones de la página del proyecto.
 
 ```python
 import requests
@@ -19,4 +19,4 @@ Todos estas librerías se descargarán de la web [https://pypi.org/](https://pyp
 
 Puedes buscar muchas librerías en ella:
 
-<iframe src="https://pypi.org/" frameborder="0" width="100%" height="700" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+![](img/pipy.png)
