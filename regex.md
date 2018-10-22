@@ -69,7 +69,7 @@ El caracter que usamos en las regex para encontrar números es '\d'. Pues bien, 
 
 >**info**
 >
->¿Qué significa la 'r' en r'\d\d\d-\d\d\d-\d\d\d'?
+>¿Qué significa la 'r' en r'\d\d\d-\d\d\d-\d\d\d\d'?
 >
 >%accordion%Solución%accordion%
 >
@@ -77,7 +77,7 @@ El caracter que usamos en las regex para encontrar números es '\d'. Pues bien, 
 >
 >%/accordion%
 
-Bues bien, para extraer el número quedaría:
+Pues bien, para extraer el número quedaría:
 
 ```python
 import re
@@ -93,7 +93,7 @@ Imagina que quieres sacar sólo el segundo elemento, es decir, los segundos tres
 ```python
 import re
 texto = 'Mi número de teléfono es 415-555-4242'
-numero = re.findall(r'\d\d\d-\d\d\d-\d\d\d\d', texto)
+numero = re.findall(r'(\d\d\d)-(\d\d\d-\d\d\d\d)', texto)
 print(numero) # Saldrá una lista con un tuple [('415', '555-4242')]
 print(numero[0][1]) # Saldrá '555-4242'
 ```
@@ -303,7 +303,7 @@ True
 'robocop'
 ```
 
-#### Sustituir cadenas con sum()
+#### Sustituir cadenas con sub()
 
 ```python
 >>> namesRegex = re.compile(r'Agent \w+')

@@ -641,3 +641,34 @@ htmlElem.send_keys(Keys.HOME)    # scrolls to top
 >
 >Selenium puede hacer mucho más que las funciones descritas aquí. Puede modificar las cookies de su navegador, tomar capturas de pantalla de páginas web y ejecutar JavaScript personalizado. Para obtener más información sobre estas funciones, puede visitar la documentación de Selenium en http://selenium-python.readthedocs.org/.
 
+Ejercicios resueltos 15 y 16
+
+%accordion%Solución%accordion%
+
+## Ejercicio 15
+
+```python
+import requests
+
+req = requests.get('http://data.pr4e.org/intro-short.txt')
+headers = req.headers
+print(headers['Last-Modified'])
+```
+
+## Ejercicio 16
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+req = requests.get('http://py4e-data.dr-chuck.net/known_by_Faith.html')
+
+for i in range(7):
+	soup = BeautifulSoup(req.text, 'html.parser')
+	enlace = soup.find_all('a')
+	print(enlace[17].text)
+	req = requests.get(enlace[17]['href'])
+```
+
+
+%/accordion%
