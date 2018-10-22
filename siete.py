@@ -3,7 +3,7 @@ smallest = None
 while True:
     try:
         num = input("Enter a number: ")
-        if num == "done":
+        if num == "hecho":
             break
         num = int(num)        
         if largest == None or num > largest:
