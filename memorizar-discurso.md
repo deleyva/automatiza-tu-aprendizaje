@@ -21,3 +21,4 @@ Ahora bien, si el discurso es muy corto y queremos aprovechar al máximo el tiem
 4. Escucharlo muchas veces, incluso mientras vamos a correr o hacemos otras tareas que no requieran nuestra atención.
 
 *¡Sin repetición, no hay aprendizaje!*
+
