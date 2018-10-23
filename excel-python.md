@@ -38,9 +38,9 @@ Quedría así:
 ```python
 >>> import openpyxl
 >>> wb = openpyxl.load_workbook('example.xlsx')
->>> wb.get_sheet_names()
+>>> wb.sheetnames
 ['Sheet1', 'Sheet2', 'Sheet3']
->>> sheet = wb.get_sheet_by_name('Sheet3')
+>>> sheet = wb['Sheet3']
 >>> sheet
 <Worksheet "Sheet3">
 >>> type(sheet) <class 'openpyxl.worksheet.worksheet.Worksheet'>
@@ -164,3 +164,25 @@ True
 >>> wb.save('logo.xlsx')
 ```
 
+<!--
+Ejercicio 17
+
+```python
+from openpyxl import Workbook
+from openpyxl.compat import range
+from openpyxl.utils import get_column_letter
+import openpyxl
+wb = openpyxl.load_workbook('example.xlsx')
+wb.sheets
+wb.get_sheet_names
+wb.get_sheet_names[0]
+wb.get_sheet_names()
+wb.sheetnames
+sheet = wb.get_sheet_by_name('Hoja1')
+sheet
+sheet.title
+print(sheet[3][2])
+print(sheet[3][2].value)
+```
+
+-->
