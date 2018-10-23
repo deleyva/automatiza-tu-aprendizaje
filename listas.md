@@ -1,9 +1,9 @@
 
-# [Listas] (# listas)
+# Listas
 
 
 
-## [Una lista es una secuencia] (# a-list-is-a-sequence)
+## Una lista es una secuencia
 
 Como una cadena, una ** lista ** es una secuencia de valores. En una cadena, los valores son caracteres; En una lista, pueden ser de cualquier tipo. Los valores en la lista se denominan ** elementos ** o, a veces, ** elementos **.
 
