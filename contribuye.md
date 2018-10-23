@@ -19,3 +19,5 @@ Una vez allí, puedes editar en tu repositorio el archivo que desees, y hacer un
 {% youtube %}https://www.youtube.com/watch?v=QntLv5BjUr0{% endyoutube %}
 
 [Aquí](https://github.com/deleyva/atuomatiza-tu-aprendizaje) tienes un proyecto que te interesa para comenzar.
+
+{% youtube %}https://youtu.be/ELeShlQiMAU{% endyoutube %}
