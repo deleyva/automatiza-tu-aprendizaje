@@ -37,5 +37,9 @@
 
 * [Procesando el csv de Diigo para Anki](csv-tsv-anki.md)
 * [Trabajando con python y excel](excel-python.md)
+* [Trabajando con python y pdfs](pdf-python.md)
 * [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
 * [Memorizar un discurso](memorizar-discurso.md)
+
+### Apéndice
+* [Enlaces de interés](enlaces.md)
