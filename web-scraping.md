@@ -641,7 +641,7 @@ htmlElem.send_keys(Keys.HOME)    # scrolls to top
 >
 >Selenium puede hacer mucho más que las funciones descritas aquí. Puede modificar las cookies de su navegador, tomar capturas de pantalla de páginas web y ejecutar JavaScript personalizado. Para obtener más información sobre estas funciones, puede visitar la documentación de Selenium en http://selenium-python.readthedocs.org/.
 
-Ejercicios resueltos 15 y 16
+Ejercicios resueltos [15](https://www.py4e.com/tsugi/gclass/launch/18469064325:5eaec5:1308:10b80f) y [16](https://www.py4e.com/tsugi/gclass/launch/18469064325:5eaec5:1310:ea1310).
 
 %accordion%Solución%accordion%
 
@@ -662,9 +662,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Sólo para aprobar
-#url = input('Enter - ')
 #html = urllib.request.urlopen(url, context=ctx).read()
-#soup = BeautifulSoup(html, 'html.parser')
 
 req = requests.get('http://py4e-data.dr-chuck.net/known_by_Faith.html')
 

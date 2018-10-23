@@ -32,3 +32,10 @@
 * [Web Scrapying](web-scraping.md)
 * [Archivos CSV y JSON](csv-json.md)
 * [Contribuyendo al software libre](contribuye.md)
+
+### Sexto día
+
+* [Procesando el csv de Diigo para Anki](csv-tsv-anki.md)
+* [Trabajando con python y excel](excel-python.md)
+* [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
+* [Memorizar un discurso](memorizar-discurso.md)
