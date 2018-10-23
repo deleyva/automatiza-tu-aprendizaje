@@ -38,8 +38,15 @@
 * [Procesando el csv de Diigo para Anki](csv-tsv-anki.md)
 * [Trabajando con python y excel](excel-python.md)
 * [Trabajando con python y pdfs](pdf-python.md)
-* [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
+* [Trabajando con python y words](word-python.md)
 * [Memorizar un discurso](memorizar-discurso.md)
+
+<!--
+### Séptimo día
+
+* [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
+-->
+
 
 ### Apéndice
 * [Enlaces de interés](enlaces.md)
