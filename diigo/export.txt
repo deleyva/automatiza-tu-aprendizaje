@@ -1,8 +1,0 @@
-title	url	tags	description	annotations
-Authentication — Requests 2.20.0 documentation	http://docs.python-requests.org/en/master/user/authentication/			"Highlight: <span class=""gp"">&gt;&gt;&gt; </span><span class=""kn"">from</span> <span class=""nn"">requests.auth</span> <span class=""k"">import</span> <span class=""n"">HTTPBasicAuth</span>
-<span class=""gp"">&gt;&gt;&gt; </span><span class=""n"">requests</span><span class=""o"">.</span><span class=""n"">get</span><span class=""p"">(</span><span class=""s1"">'https://api.github.com/user'</span><span class=""p"">,</span> <span class=""n"">auth</span><span class=""o"">=</span><span class=""n"">HTTPBasicAuth</span><span class=""p"">(</span><span class=""s1"">'user'</span><span class=""p"">,</span> <span class=""s1"">'pass'</span><span class=""p"">))</span>
-<span class=""go"">&lt;Response [200]&gt;</span>
-Sticky note: Autenticación básica en Requests
-Highlight: <span class=""gp"">&gt;&gt;&gt; </span><span class=""n"">requests</span><span class=""o"">.</span><span class=""n"">get</span><span class=""p"">(</span><span class=""s1"">'https://api.github.com/user'</span><span class=""p"">,</span> <span class=""n"">auth</span><span class=""o"">=</span><span class=""p"">(</span><span class=""s1"">'user'</span><span class=""p"">,</span> <span class=""s1"">'pass'</span><span class=""p"">))</span>
-<span class=""go"">&lt;Response [200]&gt;</span>
-Sticky note: Pasando el usuario y el password en la autenticación"
