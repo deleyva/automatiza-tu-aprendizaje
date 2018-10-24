@@ -87,3 +87,43 @@ Podéis descargaros este [pdf de muestra](http://www.estadistica.mat.uson.mx/Mat
 >>>resultPdfFile.close()
 ```
 
+>**info**
+>
+>Para comentar varias líneas de código de golpe en Visual Studio Code:
+>
+>Ctrl + k Ctrl + c
+>Ctrl + k Ctrl + u
+
+### Ejercicio [18](https://docs.google.com/forms/d/e/1FAIpQLSdeY3XFANtnxm6mwwPeStnRm-C4sx5nFXrAWcHH9m4mXSCkgA/viewform?authuser=0)
+
+Si no lo has hecho ya, descarga este documentohttp://www.estadistica.mat.uson.mx/Material/elmuestreo.pdf
+
+Combina en un sólo pdf, dos copias del mismo, la segunda con todas las páginas rotadas.
+
+%accordion%Solución%accordion%
+
+```python
+import PyPDF2
+pdf1File = open('elmuestreo.pdf', 'rb')
+pdf2File = open('elmuestreo1.pdf', 'rb')
+pdf1Reader = PyPDF2.PdfFileReader(pdf1File)
+pdf2Reader = PyPDF2.PdfFileReader(pdf2File)
+pdfWriter = PyPDF2.PdfFileWriter()
+   
+for pageNum in range(pdf1Reader.numPages):
+    pageObj = pdf1Reader.getPage(pageNum)
+    pdfWriter.addPage(pageObj)
+
+for pageNum in range(pdf2Reader.numPages):
+	pageObj = pdf2Reader.getPage(pageNum)
+	pdfWriter.addPage(pageObj)
+
+pdfOutputFile = open('combinedminutes.pdf', 'wb')
+pdfWriter.write(pdfOutputFile)
+pdfOutputFile.close()
+pdf1File.close()
+pdf2File.close()
+```
+
+%/accordion%
+

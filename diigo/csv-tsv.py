@@ -19,10 +19,10 @@ lista_out = []
 with open(filename,'r') as csvin:
     csvin = csv.reader(csvin)
     lista_csvin = list(csvin)
-    for item in lista_csvin:
+    for item in lista_csvin[1:]:
         soup = BeautifulSoup(item[4], 'html.parser')
         lineas = soup.text.splitlines()
-        for linea in lineas[1:]:
+        for linea in lineas:
             is_sticky = False
             if linea.startswith('Highlight: ') or lineas.index(linea) == 1:
                 campos = {}
@@ -42,4 +42,11 @@ with open(filename,'r') as csvin:
             lista_out.append(campos)
 
 pprint.pprint(lista_out)
+
+with open('export.tsv', 'w') as tsvout:
+    tsvout = csv.writer(tsvout, delimiter='\t')
+    for item in lista_out:
+        row = list(item.values())
+        tsvout.writerow(row)
+
 

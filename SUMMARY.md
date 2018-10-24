@@ -41,12 +41,22 @@
 * [Trabajando con python y words](word-python.md)
 * [Memorizar un discurso](memorizar-discurso.md)
 
-<!--
+
 ### Séptimo día
 
+* [Más sobre Jupyter Notebooks](jupyter.md)
+* [Recibiendo y enviando mails](mails-python.md)
+* [Controlando el ratón y el teclado](pyautgui.md)
+* [Manipulando imágenes](imagenes-python.md)
 * [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
--->
 
+<!--
+### Octavo día
+* [Nuestro primer framework: Scrapy](scrapy.md)
+* [Python y Raspberrypy](raspberry.md)
+* [Ejecutando un programa](ejecutando-programa.md)
+* [Wrapping up](wrapup.md)
+-->
 
 ### Apéndice
 * [Enlaces de interés](enlaces.md)

@@ -164,25 +164,21 @@ True
 >>> wb.save('logo.xlsx')
 ```
 
-<!--
-Ejercicio 17
+
+### Ejercicio [17](https://docs.google.com/forms/d/e/1FAIpQLSfyz0MTKc_M2EgwW8TB251j7VXeqhhtX8HEOqrem9V4QYgi5g/viewform?authuser=0)
+
+Si no lo has hecho ya, descarga el siguiente documento https://github.com/deleyva/automatiza-tu-aprendizaje/blob/master/example.xlsx?raw=true.
+
+Una vez abierto, realiza un script en python que abra la excell y encuentre el valor 'Cherries'
+
+%accordion%Solución%accordion%
 
 ```python
-from openpyxl import Workbook
-from openpyxl.compat import range
-from openpyxl.utils import get_column_letter
 import openpyxl
 wb = openpyxl.load_workbook('example.xlsx')
-wb.sheets
-wb.get_sheet_names
-wb.get_sheet_names[0]
-wb.get_sheet_names()
-wb.sheetnames
-sheet = wb.get_sheet_by_name('Hoja1')
-sheet
-sheet.title
-print(sheet[3][2])
+sheet = wb.get_sheet_by_name(wb.sheetnames[0])
 print(sheet[3][2].value)
 ```
 
--->
+%/accordion%
+

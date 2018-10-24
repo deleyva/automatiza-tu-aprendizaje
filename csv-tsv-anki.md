@@ -9,7 +9,7 @@ import csv
 from bs4 import BeautifulSoup
 import pprint
 
-def csv_to_txv(filename):
+def csv_to_tsv(filename):
     with open('export.csv','r') as csvin, open('export.txt', 'w') as tsvout:
         csvin = csv.reader(csvin)
         tsvout = csv.writer(tsvout, delimiter='\t')

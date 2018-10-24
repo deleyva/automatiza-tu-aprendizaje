@@ -543,3 +543,26 @@ JavaScript warning: https://www.diigo.com/asset/libs/YPromise-0.1.0.min.js, line
 1540224078544	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
 1540225565384	Marionette	INFO	Stopped listening on port 57385
 1540225566551	Marionette	INFO	Stopped listening on port 51216
+1540304186143	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-foreground" "-no-remote" "-profile" "/var/folders/2h/d3x_9__d2dv7l998xvvyq6nw0000gn/T/rust_mozprofile.D8UQ3HNLS4cU"
+2018-10-23 16:16:28.394 plugin-container[84110:5379537] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x7443, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-10-23 16:16:28.879 plugin-container[84110:5379537] unable to obtain configuration from file:///Library/Preferences/com.apple.ViewBridge.plist due to Error Domain=NSCocoaErrorDomain Code=257 "The file “com.apple.ViewBridge.plist” couldn’t be opened because you don’t have permission to view it." UserInfo={NSFilePath=/Library/Preferences/com.apple.ViewBridge.plist, NSUnderlyingError=0x1110e17c0 {Error Domain=NSPOSIXErrorDomain Code=1 "Operation not permitted"}}
+2018-10-23 16:16:28.884 plugin-container[84110:5379541] +[NSXPCSharedListener endpointForReply:withListenerName:]: an error occurred while attempting to obtain endpoint for listener 'ClientCallsAuxiliary': Connection invalid
+2018-10-23 16:16:28.940 plugin-container[84111:5379575] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x743b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+2018-10-23 16:16:29.141 plugin-container[84111:5379575] unable to obtain configuration from file:///Library/Preferences/com.apple.ViewBridge.plist due to Error Domain=NSCocoaErrorDomain Code=257 "The file “com.apple.ViewBridge.plist” couldn’t be opened because you don’t have permission to view it." UserInfo={NSFilePath=/Library/Preferences/com.apple.ViewBridge.plist, NSUnderlyingError=0x1066e66d0 {Error Domain=NSPOSIXErrorDomain Code=1 "Operation not permitted"}}
+2018-10-23 16:16:29.146 plugin-container[84111:5379578] +[NSXPCSharedListener endpointForReply:withListenerName:]: an error occurred while attempting to obtain endpoint for listener 'ClientCallsAuxiliary': Connection invalid
+1540304189549	Marionette	INFO	Listening on port 51206
+1540304189626	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540304189691	Marionette	DEBUG	[4294967297] Frame script loaded
+1540304189695	Marionette	DEBUG	[4294967297] Frame script registered
+2018-10-23 16:16:29.734 plugin-container[84112:5379668] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0x893b, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1540304189782	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for about:blank
+2018-10-23 16:16:29.902 plugin-container[84112:5379668] unable to obtain configuration from file:///Library/Preferences/com.apple.ViewBridge.plist due to Error Domain=NSCocoaErrorDomain Code=257 "The file “com.apple.ViewBridge.plist” couldn’t be opened because you don’t have permission to view it." UserInfo={NSFilePath=/Library/Preferences/com.apple.ViewBridge.plist, NSUnderlyingError=0x106ae58e0 {Error Domain=NSPOSIXErrorDomain Code=1 "Operation not permitted"}}
+2018-10-23 16:16:29.906 plugin-container[84112:5379672] +[NSXPCSharedListener endpointForReply:withListenerName:]: an error occurred while attempting to obtain endpoint for listener 'ClientCallsAuxiliary': Connection invalid
+1540304190128	Marionette	DEBUG	[4294967297] Received DOM event pagehide for about:blank
+JavaScript error: http://inventwithpython.com/js/bootstrap.min.js, line 7: Error: Bootstrap tooltips require Tether (http://tether.io/)
+1540304190637	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://inventwithpython.com/
+1540304191309	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://inventwithpython.com/
+1540376247595	Marionette	INFO	Stopped listening on port 51206

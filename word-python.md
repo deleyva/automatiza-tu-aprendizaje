@@ -94,3 +94,20 @@ print(getText('demo.docx'))
 height=docx.shared.Cm(4))
 <docx.shape.InlineShape object at 0x00000000036C7D30>
 ```
+
+### Ejercicio [19](https://docs.google.com/forms/d/e/1FAIpQLSdsxmIS-2zN82h3nHVyGRwfArroC42v9Fia0i6DGn0-l10eXA/viewform?authuser=0)
+
+Si no lo has hecho ya, descarga este documento https://github.com/deleyva/automatiza-tu-aprendizaje/blob/master/demo.docx?raw=true
+
+Y añádele un título y guárdalo.
+
+
+%accordion%Solución%accordion%
+
+import docx
+doc = docx.Document('demo.docx')
+doc.add_heading('Título añadido')
+doc.save('demo1.docx')
+
+%/accordion%
+
