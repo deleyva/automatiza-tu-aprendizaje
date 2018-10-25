@@ -1,8 +1,14 @@
 # Tratando imágenes con Python
 
-Artículo [aquí]()
+Artículo [aquí](https://automatetheboringstuff.com/chapter17/)
 
 Documentación [aquí](https://pillow.readthedocs.io/en/5.3.x/)
+
+Instalamos:
+
+```python
+pip install pillow
+```
 
 ```python
 >>> from PIL import ImageColor
@@ -20,7 +26,7 @@ Documentación [aquí](https://pillow.readthedocs.io/en/5.3.x/)
 
 ## Manipulando imágenes con Pillow
 
-Puedes descargarte la imagen de prueba de [aquí](https://github.com/deleyva/automatiza-tu-aprendizaje/blob/master/img/zophie?raw=true).
+Puedes descargarte la imagen de prueba de [aquí](https://github.com/deleyva/automatiza-tu-aprendizaje/raw/master/img/zophie.png).
 
 ```python
 >>> from PIL import Image

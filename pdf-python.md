@@ -91,8 +91,8 @@ Podéis descargaros este [pdf de muestra](http://www.estadistica.mat.uson.mx/Mat
 >
 >Para comentar varias líneas de código de golpe en Visual Studio Code:
 >
->Ctrl + k Ctrl + c
->Ctrl + k Ctrl + u
+>* Ctrl + k Ctrl + c
+>* Ctrl + k Ctrl + u
 
 ### Ejercicio [18](https://docs.google.com/forms/d/e/1FAIpQLSdeY3XFANtnxm6mwwPeStnRm-C4sx5nFXrAWcHH9m4mXSCkgA/viewform?authuser=0)
 

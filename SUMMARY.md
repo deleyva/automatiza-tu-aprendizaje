@@ -2,6 +2,8 @@
 
 ### Arrancando motores
 * [Introduction](README.md)
+* [Instalando Python](instalando_python.md)
+* [Instalando Visual Studio Code](visual_studio.md)
 * [Funciones](funciones.md)
 * [Iteraciones](iteraciones.md)
 
@@ -50,13 +52,12 @@
 * [Manipulando imágenes](imagenes-python.md)
 * [Memorizando fórmulas matemáticas](memoriza-matematicas.md)
 
-<!--
 ### Octavo día
 * [Nuestro primer framework: Scrapy](scrapy.md)
+* [Gestionando archivos](gestion-archivos.md)
 * [Python y Raspberrypy](raspberry.md)
 * [Ejecutando un programa](ejecutando-programa.md)
 * [Wrapping up](wrapup.md)
--->
 
 ### Apéndice
 * [Enlaces de interés](enlaces.md)

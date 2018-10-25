@@ -20,8 +20,11 @@
 * [Scoth.io](https://scotch.io/)
 * [PluralSight](https://www.pluralsight.com/)
 * [Egghead.io](https://egghead.io/)
-* [Code.org][https://code.org/]
+* [Code.org](https://code.org/)
 * [Kaggle](https://www.kaggle.com/)
+* [codeacademy](https://www.codecademy.com/es)
+* [Codepen para aprender desarrollo web](https://codepen.io/)
+* [Freecodecamp](https://www.freecodecamp.org/)
 
 ## Cursos interesantes
 
@@ -29,6 +32,7 @@
 * [cs50 de Harvard](https://www.edx.org/es/course/cs50s-introduction-computer-science-harvardx-cs50x)
 * [Python for Everybody](https://es.coursera.org/specializations/python)
 * [Introducción a Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
+* [Intro a Python en CodeAcademy](https://www.codecademy.com/learn/learn-python)
 
 ## Herramientas útiles
 
