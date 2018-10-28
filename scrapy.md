@@ -77,18 +77,16 @@ Más en el siguiente vídeo:
 
 
 
-Pregunta [23]()
+Pregunta [23](https://classroom.google.com/c/MTg0NjkwNjQzMjVa/sa/MjI4MDc0NzA4Mzha/details)
 
 <!--
 %accordion%Solución%accordion%
 
-
-
-```
+//div[@class="greyText smallest Text"]
 
 %/accordion%
 -->
 
 ## Desplegando nuestra araña en scrapyd
 
-Para tener tu araña corriendo en la web aquí tienes una plataforma muy interesante.
+Para tener tu araña corriendo en la web [aquí](https://scrapinghub.com/scrapy-cloud) tienes una plataforma muy interesante.

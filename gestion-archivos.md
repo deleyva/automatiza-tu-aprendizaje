@@ -124,4 +124,21 @@ La función os.walk () devolverá tres valores en cada iteración a través del 
 >>> newZip.close()
 ```
 
-Pregunta [24]()
+**info**
+
+Para este ejercicio te vendrán bien los siguientes comandos:
+
+```python
+os.mkdir('carpeta')
+os.getcwd() # Te devuelve la ruta en la que te encuentras
+```
+
+Pregunta [24](https://classroom.google.com/c/MTg0NjkwNjQzMjVa/sa/MjI4MDk2NDY2MzBa/details)
+
+%accordion%Solución%accordion%
+
+```python
+
+```
+
+%/accordion%

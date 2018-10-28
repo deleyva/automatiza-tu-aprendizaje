@@ -11,5 +11,8 @@
 *  Organizar archivos
 *  Debuguear con Visual Studio Code
 *  WebScraping con diferentes técnicas
-*  Trabajar con pdfs, excel, words, csv, tsv y archivos de imagen y de texto.
+*  Trabajar con pdfs, excel, words, csv, tsv y archivos de imagen y de texto
+*  Conectarte a apis
+*  Trabajar con formato json
 *  Uso de Anki
+*  Técnicas sencillas de memorización

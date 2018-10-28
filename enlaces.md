@@ -25,6 +25,8 @@
 * [codeacademy](https://www.codecademy.com/es)
 * [Codepen para aprender desarrollo web](https://codepen.io/)
 * [Freecodecamp](https://www.freecodecamp.org/)
+* [Microsoft Virtual Academy](https://mva.microsoft.com/)
+* [Learnenough.com](https://www.learnenough.com/)
 
 ## Cursos interesantes
 

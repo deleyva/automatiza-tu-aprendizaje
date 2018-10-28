@@ -57,6 +57,7 @@
 * [Gestionando archivos](gestion-archivos.md)
 * [Python y Raspberrypy](raspberry.md)
 * [Ejecutando un programa](ejecutando-programa.md)
+* [Añadinedo campos a Anki](anadiendo-campos.md)
 * [Wrapping up](wrapup.md)
 
 ### Apéndice
