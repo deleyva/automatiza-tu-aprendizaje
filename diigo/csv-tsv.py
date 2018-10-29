@@ -10,8 +10,10 @@ with open(filename,'r') as csvin:
     lista_csvin = list(csvin)
     print(len(lista_csvin))
     for item in lista_csvin[1:]:
+#        print(item)
         lineas = iter(item[4].splitlines())
         for linea in lineas:
+#            print('Linea :', linea)
             if linea.startswith('Highlight: '):
                 campos = {}
                 campos['back'] = BeautifulSoup(linea[11:], 'html.parser').text
@@ -24,12 +26,13 @@ with open(filename,'r') as csvin:
                 lista_out.append(campos)
             else:
                 try:
-                    if next(lineas).startswith('Highlight: '):
+                    if next(lineas).startswith('Highlight: ') or next(lineas) == None:
                         lista_out.append(campos)
                 except Exception as e:
                     print(e)
+            print(campos)
 
-pprint.pprint(lista_out)
+#pprint.pprint(lista_out)
 
 # with open('export.tsv', 'w') as tsvout:
 #     tsvout = csv.writer(tsvout, delimiter='\t')
