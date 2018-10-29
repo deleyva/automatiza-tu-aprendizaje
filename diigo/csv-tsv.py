@@ -3,13 +3,12 @@ from bs4 import BeautifulSoup
 import pprint
 
 filename = input('Introduce el nombre del archivo: ')
-
-
 lista_out = []
 
 with open(filename,'r') as csvin:
     csvin = csv.reader(csvin)
     lista_csvin = list(csvin)
+    print(len(lista_csvin))
     for item in lista_csvin[1:]:
         lineas = iter(item[4].splitlines())
         for linea in lineas:
