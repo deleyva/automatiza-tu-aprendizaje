@@ -4,7 +4,7 @@ from py_translator import Translator
 import tomd
 import time
 
-r = requests.get('https://books.trinket.io/pfe/10-tuples.html')
+r = requests.get('https://books.trinket.io/pfe/01-intro.html')
 soup = BeautifulSoup(r.text, 'html.parser')
 
 texto_markdown = tomd.convert(str(soup.body))
@@ -12,8 +12,8 @@ lista = texto_markdown.splitlines()
 
 flag_entre_comillas = False
 
-with open('tupples1.md', 'a') as file:
-	for item in lista[230:]:
+with open('intro.md', 'a') as file:
+	for item in lista:
 		translator = Translator()
 		if '```' in item:
 			file.writelines('```')
@@ -25,7 +25,7 @@ with open('tupples1.md', 'a') as file:
 			print(objeto_traducido)
 			time.sleep(5)
 		else:
-			file.writelines(item)
+			file.writelines(item.replace('&gt;&gt;&gt;', '>>>') + '\n')
 
 print('¡Hecho!')
 
