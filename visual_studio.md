@@ -38,3 +38,9 @@ Y ya podemos instalar nuestras librerías:
 ```python
 pipenv install 
 ```
+
+Para desactivar el entorno virtual:
+
+```python
+deactivate
+```
