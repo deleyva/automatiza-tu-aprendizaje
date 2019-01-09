@@ -8,8 +8,7 @@ En este curso haremos uso de:
 * Softwares para la gestión de la información.
 * Algo de programación para la automatización de las tareas aburridas
 
-  
-
+> Para la utilizacion de py_translator en el script scrap.py, leer https://github.com/markolofsen/py_translator/pull/8/commits/410ccdcafdcc2a087b455b4e6a5eb7fef13f1c69
 
 
 

@@ -4,15 +4,16 @@ from py_translator import Translator
 import tomd
 import time
 
-r = requests.get('https://books.trinket.io/pfe/09-dictionaries.html')
+r = requests.get('https://books.trinket.io/pfe/10-tuples.html')
 soup = BeautifulSoup(r.text, 'html.parser')
 
 texto_markdown = tomd.convert(str(soup.body))
 lista = texto_markdown.splitlines()
+print(lista)
 
 flag_entre_comillas = False
 
-with open('./libro/09-diccionarios.md', 'a') as file:
+with open('./libro/10-tuplas.md', 'a') as file:
 	for item in lista:
 		translator = Translator()
 		if '```' in item:
