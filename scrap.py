@@ -30,5 +30,4 @@ with open('./libro/09-diccionarios.md', 'a') as file:
 		else:
 			file.writelines(item.replace('&gt;&gt;&gt;', '>>>') + '\n')
 
-print('¡Hecho!')
-
+print('Hecho!')
