@@ -4,7 +4,7 @@ from py_translator import Translator
 import tomd
 import time
 
-r = requests.get('https://books.trinket.io/pfe/10-tuples.html')
+r = requests.get('https://books.trinket.io/pfe/14-objects.html')
 soup = BeautifulSoup(r.text, 'html.parser')
 
 texto_markdown = tomd.convert(str(soup.body))
@@ -13,7 +13,7 @@ print(lista)
 
 flag_entre_comillas = False
 
-with open('./libro/10-tuplas.md', 'a') as file:
+with open('./libro/13-objetos.md', 'a') as file:
 	for item in lista:
 		translator = Translator()
 		if '```' in item:
