@@ -4,7 +4,7 @@ from py_translator import Translator
 import tomd
 import time
 
-r = requests.get('https://books.trinket.io/pfe/15-database.html')
+r = requests.get('https://books.trinket.io/pfe/08-lists.html')
 soup = BeautifulSoup(r.text, 'html.parser')
 
 texto_markdown = tomd.convert(str(soup.body))
@@ -13,8 +13,8 @@ print(lista)
 
 flag_entre_comillas = False
 
-with open('./libro/15-bases-de-datos-y-sql.md', 'a') as file:
-	for item in lista:
+with open('./libro/08-lists.md', 'a') as file:
+	for item in lista[270:]:
 		translator = Translator()
 		if '```' in item:
 			file.writelines('```')
